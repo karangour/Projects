@@ -7,20 +7,24 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <script src="script.js"></script>
     <section class="top">
-        <h3>RESTART</h3>
+        <button id="restart"><h3>RESTART</h3></button>
         <h4>Between 1 and 20</h4>
     </section>
     <section class="center">
         <h1>GUESS MY NUMBER!</h1>
     </section>
-    <span id="number">?</span>
-    </section>
-    <section class="input">
-        <input id="type" type="text" placeholder="0">
-    </section>
+    <div class="number">
+        <h4 id="number">?</h4>
+    </div>
+    <div class="input">
+        <input id="type" type="text">
+    </div>
+    <div class="button-container">
         <button id="button-check">CHECK</button>
-        <h3 id="start-guessing">Start guessing...</h3>
+    </div>
+        <h3 class="start-guessing">Start guessing...</h3>
     <section class="totals">
         <h3 id="score">SCORE: 20</h3>
         <h3 id="highscore">Highscore: 0</h3>
