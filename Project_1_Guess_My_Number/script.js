@@ -93,9 +93,9 @@ document.addEventListener('readystatechange', function () {
             const isCorrect = await rightOrWrong(num, choice);
             if (isCorrect) {
               gameEnded = true;
-              //document.querySelector('#number').textContent = num; //show 'my number'
+              document.querySelector('#number').textContent = num; //show 'my number'
               if (highscore < score) {
-                document.querySelector('#number').textContent = num; //show 'my number'
+                //document.querySelector('#number').textContent = num; //show 'my number'
                 highscore = score;
                 document.querySelector('#highscore').textContent =
                   'Highscore: ' + highscore;
@@ -159,7 +159,7 @@ document.addEventListener('readystatechange', function () {
     document
       .querySelector('.top #restart')
       .addEventListener('click', async () => {
-        console.log('inside restart button');
+        //console.log('inside restart button');
         initializer();
       });
   }
