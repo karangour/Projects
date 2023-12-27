@@ -108,7 +108,7 @@ document.addEventListener('readystatechange', function () {
                   'Uh-oh! Please RESTART!';
               }
               if (score > 0) {
-                score = score - 1;
+                score--;
                 display('#score', 'SCORE: ' + score, 0.2);
 
                 counter = 0;
