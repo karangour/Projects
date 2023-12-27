@@ -1,8 +1,5 @@
 document.addEventListener('readystatechange', function () {
-  //let page load before js logic starts.
   if (document.readyState === 'complete') {
-    //once it's loaded..
-
     const randNum = () => {
       return Math.floor(Math.random() * 20) + 1;
     };
@@ -31,8 +28,6 @@ document.addEventListener('readystatechange', function () {
       let counter = 0;
       let score = 20;
 
-      //document.querySelector('#number').textContent = num;
-
       document.querySelector('.input #type').value = '';
       document.querySelector('#score').textContent = 'SCORE: ' + score;
       document.querySelector('.number #number').textContent = '?';
@@ -55,12 +50,12 @@ document.addEventListener('readystatechange', function () {
         counter++;
       }, 500);
 
-      document //for all functions triggered by 'CHECK' button
+      document
         .querySelector('#button-check')
         .addEventListener('click', async () => {
           clearInterval(blink);
 
-          choice = Number(document.querySelector('.input #type').value); //this has to be converted to a number since it's ANY input by user is ALWAYS a string by default
+          choice = Number(document.querySelector('.input #type').value);
 
           if (!choice) {
             display('.start-guessing', 'No number!', 1);
@@ -93,9 +88,8 @@ document.addEventListener('readystatechange', function () {
             const isCorrect = await rightOrWrong(num, choice);
             if (isCorrect) {
               gameEnded = true;
-              document.querySelector('#number').textContent = num; //show 'my number'
+              document.querySelector('#number').textContent = num;
               if (highscore < score) {
-                //document.querySelector('#number').textContent = num; //show 'my number'
                 highscore = score;
                 document.querySelector('#highscore').textContent =
                   'Highscore: ' + highscore;
@@ -107,16 +101,13 @@ document.addEventListener('readystatechange', function () {
                 document.querySelector('.start-guessing').textContent =
                   'Press RESTART!';
             } else if (!isCorrect) {
-              //document.querySelector('#number').textContent = num; //show 'my number'
               if (score === 0) {
                 gameEnded = true;
-                document.querySelector('#number').textContent = num; //show 'my number'
+                document.querySelector('#number').textContent = num;
                 document.querySelector('.start-guessing').textContent =
                   'Uh-oh! Please RESTART!';
               }
               if (score > 0) {
-                //document.querySelector('#number').textContent = num; //show 'my number'
-                //console.log(score);
                 score = score - 1;
                 display('#score', 'SCORE: ' + score, 0.2);
 
@@ -152,14 +143,12 @@ document.addEventListener('readystatechange', function () {
         });
     }
 
-    //let score = 20;
     let highscore = 0;
 
     initializer();
     document
       .querySelector('.top #restart')
       .addEventListener('click', async () => {
-        //console.log('inside restart button');
         initializer();
       });
   }
