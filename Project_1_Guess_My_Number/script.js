@@ -32,7 +32,7 @@ document.addEventListener('readystatechange', function () {
       document.querySelector('#score').textContent = 'SCORE: ' + score;
       document.querySelector('.number #number').textContent = '?';
 
-      let blink = setInterval(() => {
+      guessLoop = () => setInterval(() => {
         switch (counter % 4) {
           case 0:
             document.querySelector('.start-guessing').textContent = s;
@@ -50,6 +50,8 @@ document.addEventListener('readystatechange', function () {
         counter++;
       }, 500);
 
+      let blink = guessLoop(); 
+
       document
         .querySelector('#button-check')
         .addEventListener('click', async () => {
@@ -63,26 +65,27 @@ document.addEventListener('readystatechange', function () {
             s = 'Start guessing';
 
             if (!gameEnded) {
-              blink = setInterval(() => {
-                switch (counter % 4) {
-                  case 0:
-                    document.querySelector('.start-guessing').textContent = s;
-                    break;
-                  case 1:
-                    document.querySelector('.start-guessing').textContent =
-                      s + '.';
-                    break;
-                  case 2:
-                    document.querySelector('.start-guessing').textContent =
-                      s + '..';
-                    break;
-                  default:
-                    document.querySelector('.start-guessing').textContent =
-                      s + '...';
-                    break;
-                }
-                counter++;
-              }, 500);
+              blink = guessLoop();
+              // blink = setInterval(() => {
+              //   switch (counter % 4) {
+              //     case 0:
+              //       document.querySelector('.start-guessing').textContent = s;
+              //       break;
+              //     case 1:
+              //       document.querySelector('.start-guessing').textContent =
+              //         s + '.';
+              //       break;
+              //     case 2:
+              //       document.querySelector('.start-guessing').textContent =
+              //         s + '..';
+              //       break;
+              //     default:
+              //       document.querySelector('.start-guessing').textContent =
+              //         s + '...';
+              //       break;
+              //   }
+              //   counter++;
+              // }, 500);
             }
           } else {
             const isCorrect = await rightOrWrong(num, choice);
@@ -115,27 +118,28 @@ document.addEventListener('readystatechange', function () {
                 s = 'Start guessing';
 
                 if (!gameEnded) {
-                  blink = setInterval(() => {
-                    switch (counter % 4) {
-                      case 0:
-                        document.querySelector('.start-guessing').textContent =
-                          s;
-                        break;
-                      case 1:
-                        document.querySelector('.start-guessing').textContent =
-                          s + '.';
-                        break;
-                      case 2:
-                        document.querySelector('.start-guessing').textContent =
-                          s + '..';
-                        break;
-                      default:
-                        document.querySelector('.start-guessing').textContent =
-                          s + '...';
-                        break;
-                    }
-                    counter++;
-                  }, 500);
+                  blink = guessLoop();
+                  // blink = setInterval(() => {
+                  //   switch (counter % 4) {
+                  //     case 0:
+                  //       document.querySelector('.start-guessing').textContent =
+                  //         s;
+                  //       break;
+                  //     case 1:
+                  //       document.querySelector('.start-guessing').textContent =
+                  //         s + '.';
+                  //       break;
+                  //     case 2:
+                  //       document.querySelector('.start-guessing').textContent =
+                  //         s + '..';
+                  //       break;
+                  //     default:
+                  //       document.querySelector('.start-guessing').textContent =
+                  //         s + '...';
+                  //       break;
+                  //   }
+                  //   counter++;
+                  // }, 500);
                 }
               }
             }
