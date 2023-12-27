@@ -12,6 +12,7 @@ document.addEventListener('readystatechange', function () {
     async function rightOrWrong(n, c) {
       // If the number is equal to random number:
       if (n === c) {
+        document.querySelector('body').style.backgroundColor = '#60b347'; // change background color
         await display('.start-guessing', 'Correct!!', 1);
         return true;
       }
@@ -37,6 +38,7 @@ document.addEventListener('readystatechange', function () {
       document.querySelector('.input #type').value = '';
       document.querySelector('#score').textContent = 'SCORE: ' + score;
       document.querySelector('.number #number').textContent = '?';
+      document.querySelector('body').style.backgroundColor = 'rgb(80, 53, 53)';
 
       guessLoop = () =>
         setInterval(() => {
@@ -80,8 +82,9 @@ document.addEventListener('readystatechange', function () {
             // Number entered matches the random number.
             if (isCorrect) {
               gameEnded = true;
+              
               document.querySelector('#number').textContent = num; // show random number
-              console.log('in here');
+              
               // If the current score beats the highscore:
               if (highscore < score) {
                 highscore = score;
