@@ -12,7 +12,12 @@ document.addEventListener('readystatechange', function () {
     async function rightOrWrong(n, c) {
       // If the number is equal to random number:
       if (n === c) {
-        document.querySelector('body').style.backgroundColor = '#60b347'; // change background color
+        document.querySelectorAll('*').forEach(function(element) {
+          element.style.backgroundColor = '#60b347';
+      });
+        document.querySelectorAll('*').forEach(function(element) {
+          element.style.color = 'black';
+      });
         await display('.start-guessing', 'Correct!!', 1);
         return true;
       }
@@ -35,10 +40,17 @@ document.addEventListener('readystatechange', function () {
       let counter = 0;
       let score = 20;
 
-      document.querySelector('.input #type').value = '';
+      document.querySelector('#type').value = '';
       document.querySelector('#score').textContent = 'SCORE: ' + score;
-      document.querySelector('.number #number').textContent = '?';
-      document.querySelector('body').style.backgroundColor = 'rgb(80, 53, 53)';
+      document.querySelector('#number').textContent = '?';
+      document.querySelectorAll('*').forEach(function(element) {
+        element.style.backgroundColor = 'rgb(80, 53, 53)';
+      });
+      
+      document.querySelectorAll('*').forEach(function(element) {
+        element.style.color = 'rgb(181, 185, 186)';
+    });
+      
 
       guessLoop = () =>
         setInterval(() => {
@@ -67,7 +79,7 @@ document.addEventListener('readystatechange', function () {
         .addEventListener('click', async () => {
           clearInterval(blink);
 
-          choice = Number(document.querySelector('.input #type').value);
+          choice = Number(document.querySelector('#type').value);
           // No number has been input
           if (!choice) {
             display('.start-guessing', 'No number!', 1);
