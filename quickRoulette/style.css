@@ -1,0 +1,81 @@
+body {
+    background-color: black;
+    color: white;
+}
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+#inputlabel {
+    text-align: center;
+}
+
+#bankroll {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.bet1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bet1label {
+    text-align: center;
+}
+
+#bet1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.bet2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bet2label {
+    text-align: center;
+}
+
+#bet2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;;
+}
+
+.winlose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#win {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    
+}
+
+#lose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+}
