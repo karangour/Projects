@@ -1,83 +1,71 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tektur&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-weight: 400;
   height: 100vh;
   color: #494949;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 1;
+  position: relative;
 }
 
 .players {
-  display: flex;
-  /* border: 1px solid black; */
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  border: 3px solid green;
+  width: 1000px;
+  height: 500px;
+  left: 12%;
+  top: 17%;
 }
 
 #player1,
 #player2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  padding: 30vh 15vw;
-  border: 1px solid black;
-}
+  position: absolute;
+  border: 2px solid blue;
 
-.player-text {
-  align-self: flex-start;
-  border: 1px solid black;
-  margin-top: -120%;
+  width: 500px;
+  height: 500px;
 }
 
 #player1 {
-  background: rgb(204, 89, 89);
-  border: 1px solid black;
-  /* z-index: 2; */
-  /* box-shadow: 0 0 50px rgb(89, 198, 204); */
+  background: rgb(175, 89, 89);
 }
 
 #player2 {
-  background: rgb(241, 134, 118);
-  border: 1px solid black;
-  /* z-index: 2;
-  box-shadow: 0 0 50px rgb(89, 198, 204); */
+  left: 50%;
+  background: rgb(209, 163, 96);
 }
 
-.score1, .score2 {
-  
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 100px;
-  font-weight: bolder;
-  border: 1px solid black;
+.player-text {
+  font-family: "Tektur", sans-serif;
+  font-size: 40px;
+  position: absolute;
+  display: flex;
+  border: 1px solid yellow;
+  top: -100px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-.score1 {
-    display: flex;
-    position:absolute;
-    align-items: center;
-    justify-content:center;
-    padding: 22.35vh 18vw;
-    
+.score1,
+.score2 {
+  position: absolute;
+  display: flex;
+  border: 1px solid yellow;
+  font-family: "Roboto", sans-serif;
+  font-size: 80px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
-
-
 
 .currents {
 }
