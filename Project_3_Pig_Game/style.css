@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #494949;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 1;
+}
+
+.players {
+  display: flex;
+  /* border: 1px solid black; */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+#player1,
+#player2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  padding: 30vh 15vw;
+  border: 1px solid black;
+}
+
+.player-text {
+  align-self: flex-start;
+  border: 1px solid black;
+  margin-top: -120%;
+}
+
+#player1 {
+  background: rgb(204, 89, 89);
+  border: 1px solid black;
+  /* z-index: 2; */
+  /* box-shadow: 0 0 50px rgb(89, 198, 204); */
+}
+
+#player2 {
+  background: rgb(241, 134, 118);
+  border: 1px solid black;
+  /* z-index: 2;
+  box-shadow: 0 0 50px rgb(89, 198, 204); */
+}
+
+.score1, .score2 {
+  
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 100px;
+  font-weight: bolder;
+  border: 1px solid black;
+}
+
+.score1 {
+    display: flex;
+    position:absolute;
+    align-items: center;
+    justify-content:center;
+    padding: 22.35vh 18vw;
+    
+}
+
+
+
+.currents {
+}
+
+.current_scores {
+}
+
+.buttons {
+}

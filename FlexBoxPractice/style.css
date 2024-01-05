@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(243, 85, 85);
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    background: rgb(131, 160, 131);
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 45%;
+    position: relative;
+}
+
+#title1 {
+    background: rgb(168, 168, 247);
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 25%;
+    left: 25%;
+}
+
+.container h3 {
+    border: 2px solid red;
+    display: flex;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+}
