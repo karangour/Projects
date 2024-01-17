@@ -4,7 +4,7 @@ function kellyCriterionBet(bankroll, probability, odds) {
 }
 
 function simulateBetsKellyCriterion() {
-    let totalAmount = 10000;
+    let totalAmount = 1000;
     let odds = 6; // Payout is 6 to 1
 
     // Probabilities of winning each bet
@@ -14,10 +14,10 @@ function simulateBetsKellyCriterion() {
     let total = totalAmount;
     let negativeCount = 0;
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 1; i++) {
         let bet1 = kellyCriterionBet(total, probabilityBet1, odds);
         let bet2 = kellyCriterionBet(total, probabilityBet2, odds);
-        console.log
+        console.log (bet1, bet2)
         total -= bet1 + bet2;
 
         if (total <= 0) {
@@ -35,6 +35,7 @@ function simulateBetsKellyCriterion() {
 
     return total - totalAmount;
 }
+
 
 // Running the Kelly Criterion simulation 10,000 times
 let negativeResults = 0;

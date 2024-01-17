@@ -1,44 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Tektur&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 9px;
 }
 
 body {
   height: 100vh;
   color: #494949;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.instructions {
+  position: relative;
+  z-index: 20;
+  background-image: linear-gradient(to top left, #827236 0%, #d8ccea 100%);
+  width: 300px;
+  height: 200px;
+  box-shadow: 0px 0px 20px 20px rgb(212, 150, 245);
+}
+
+#rules {
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  text-align: center;
+  font-size: 11px;
+  line-height: 25px;
+  left: 30px;
+  top: 45px;
+  font-weight: bolder;
+}
+
+.click-anywhere {
+  font-family: "Tektur", sans-serif;
+  position: absolute;
+  font-size: 12px;
+  text-align: center;
+  top: 180px;
+  left: 75px;
+}
 .players {
   position: absolute;
-  border: 3px solid green;
+
+  /* border: 3px solid green; */
   width: 1000px;
   height: 500px;
-  left: 12%;
-  top: 17%;
 }
 
 #player1,
 #player2 {
   position: absolute;
-  border: 2px solid blue;
-
+  /* border: 2px solid blue; */
   width: 500px;
   height: 500px;
 }
 
-#player1 {
-  background: rgb(175, 89, 89);
-}
-
 #player2 {
   left: 50%;
-  background: rgb(209, 163, 96);
 }
 
 .player-text {
@@ -46,7 +72,7 @@ body {
   font-size: 40px;
   position: absolute;
   display: flex;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   top: -100px;
   width: 100%;
   height: 100%;
@@ -56,9 +82,8 @@ body {
 
 .score1,
 .score2 {
-  position: absolute;
   display: flex;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   font-family: "Roboto", sans-serif;
   font-size: 80px;
   width: 100%;
@@ -68,10 +93,106 @@ body {
 }
 
 .currents {
+  position: absolute;
+  font-family: "Tektur", sans-serif;
+  font-size: 20px;
+  /* border: 1px solid teal; */
+  background: rgb(243, 181, 202);
+  box-shadow: -5px 10px 5px rgba(33, 11, 146, 0.2);
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  left: 40%;
+  top: 70%;
 }
 
-.current_scores {
+.current-text {
+  position: absolute;
+  left: 7%;
+  top: 15%;
+}
+
+.current-score1,
+.current-score2 {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
 }
 
 .buttons {
+  position: absolute;
+  width: 110px;
+  height: 500px;
+  top: 8%;
+  left: 46%;
+}
+
+#new_game,
+#roll_dice,
+#hold {
+  position: absolute;
+  font-family: "Saira Condensed", sans-serif;
+  background-image: linear-gradient(to top left, #823636 0%, #bf2e66 100%);
+  color: white;
+  box-shadow: -5px 10px 5px rgba(33, 11, 146, 0.2);
+  font-size: 15px;
+  width: 100px;
+  height: 30px;
+  left: -10%;
+  z-index: 10;
+}
+
+#roll_dice {
+  top: 350px;
+}
+
+#hold {
+  top: 400px;
+}
+
+.dice-box {
+  position: absolute;
+  background-color: white;
+  box-shadow: -5px 10px 5px rgba(33, 11, 146, 0.2);
+  width: 100px;
+  height: 100px;
+  top: 32%;
+  left: -10%;
+  z-index: 10;
+}
+
+.dice-container {
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  line-height: 35px;
+  font-size: 150px;
+  top: 22.5%;
+  left: -11%;
+  z-index: 10;
+}
+
+.active {
+  background: rgb(209, 163, 96);
+  box-shadow: 0px 0px 20px 20px rgba(65, 231, 43, 0.2);
+  z-index: 5;
+}
+
+.inactive {
+  background: rgb(175, 89, 89);
+  z-index: 0;
+}
+
+.blur {
+  filter: blur(5px);
+  
+}
+
+.hidden {
+  display: none;
 }
