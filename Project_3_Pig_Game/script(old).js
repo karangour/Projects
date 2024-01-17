@@ -15,35 +15,29 @@ const instructions = document.querySelector(".instructions");
 const game = document.querySelector(".players");
 
 function initGame() {
-  current1.textContent = 0;
-  current2.textContent = 0;
-  score1.textContent = 0;
-  score2.textContent = 0;
   game.classList.add("blur", "inactive");
   instructions.classList.remove("hidden");
   instructions.addEventListener("click", () => {
     instructions.classList.add("hidden");
     game.classList.remove("blur");
-    newGame();
+    // newGame();
   });
   game.addEventListener("click", () => {
     instructions.classList.add("hidden");
     game.classList.remove("blur");
-    newGame();
+    // newGame();
   });
 }
-
 function newGame() {
   player1.classList.add("active");
-  player2.classList.remove("active");
   player2.classList.add("inactive");
+  // gamePlay();
 }
 function clearDice() {
   for (let i = 0; i < 3; i++) {
     dice[i].textContent = "\u00A0";
   }
 }
-
 function diceAnimation(i) {
   return new Promise((resolve) => {
     if (i < 3) {
@@ -77,7 +71,6 @@ function diceAnimation(i) {
     }
   });
 }
-
 async function displayDice(num) {
   clearDice();
   for (let j = 0; j < 4; j++) {
@@ -116,10 +109,59 @@ async function displayDice(num) {
   }
 }
 
-initGame();
-//newGame();
+function gamePlay() {
+  let current = 0;
+  let diceroll = 0;
+  roll.addEventListener("click", () => {
+    diceroll = Math.floor(((Math.random() * 10) % 6) + 1);
+    displayDice(diceroll);
 
-let number = Math.floor(((Math.random() * 10) % 6) + 1);
-console.log(number);
-console.log(current1, current2);
-//displayDice(number);
+    if (player1.classList.contains("active")) {
+      if (diceroll != 1) {
+        current = parseInt(current1.textContent);
+        current1.textContent = current + diceroll;
+      } else score1.textContent = 0;
+    } else {
+      if (diceroll != 1) {
+        current = parseInt(current2.textContent);
+        current2.textContent = current + diceroll;
+      } else score2.textContent = 0;
+    }
+  });
+
+  hold.addEventListener("click", () => {
+    if (player1.classList.contains("active")) {
+      score1.textContent =
+        parseInt(score1.textContent) + parseInt(current1.textContent);
+      current1.textContent = 0;
+      player1.classList.remove("active");
+      player1.classList.add("inactive");
+      player2.classList.add("active");
+      player2.classList.remove("inactive");
+    } else {
+      score2.textContent =
+        parseInt(score2.textContent) + parseInt(current2.textContent);
+      current2.textContent = 0;
+      player1.classList.add("active");
+      player1.classList.remove("inactive");
+      player2.classList.remove("active");
+      player2.classList.add("inactive");
+    }
+  });
+
+  newgame.addEventListener("click", () => {
+    current1.textContent = 0;
+    current2.textContent = 0;
+    score1.textContent = 0;
+    score2.textContent = 0;
+    player1.classList.remove("active");
+    player1.classList.remove("inactive");
+    player2.classList.remove("active");
+    player2.classList.remove("inactive");
+    newGame();
+  });
+}
+
+initGame();
+newGame();
+gamePlay();
